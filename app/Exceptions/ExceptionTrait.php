@@ -20,7 +20,8 @@ trait ExceptionTrait
                 'errors' => "Incorrect route"
             ], Response::HTTP_NOT_FOUND);
         }
-        return $request->all();
+
+        return parent::render($request, $e);
     }
 
     protected function isModel($e)
